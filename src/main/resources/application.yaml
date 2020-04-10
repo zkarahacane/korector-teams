@@ -1,0 +1,15 @@
+spring:
+  profiles: "dev"
+  datasource:
+    url: "jdbc:mysql://localhost:3306/korector"
+    username: "root"
+    password: "root"
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+

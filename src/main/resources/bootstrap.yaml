@@ -1,6 +1,22 @@
 spring:
   application:
     name: teams
+  profiles:
+    active: ${activatedProperties}
+---
+spring:
+  profiles: "dev"
+  cloud:
+    config:
+      discovery:
+        enabled: false
+eureka:
+  client:
+    enabled: false
+
+---
+spring:
+  profiles: "prod"
   cloud:
     config:
       discovery:
@@ -13,3 +29,7 @@ eureka:
       defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
   instance:
     preferIpAddress: true
+ribbon:
+  http:
+    client:
+      enabled: true
