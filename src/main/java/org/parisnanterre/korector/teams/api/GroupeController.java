@@ -31,4 +31,9 @@ public class GroupeController {
         });
         return new ResponseEntity<>(groupes, HttpStatus.OK);
     }
+
+    @RequestMapping(path = "/test", method = RequestMethod.GET)
+    public String test(){
+        return "OK de teams";
+    }
 }
